@@ -13,6 +13,9 @@ from utils import (
 
 st.set_page_config(page_title="AI Flashcard Maker", layout="wide")
 
+if "GEMINI_API_KEY" in st.secrets and st.secrets["GEMINI_API_KEY"]:
+    os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
+
 # === Live animated background + glass button bar ===
 ANIMATED_BG = """
 <style>
